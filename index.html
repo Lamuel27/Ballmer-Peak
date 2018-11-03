@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Marvel Ancestry.com</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Cinzel|EB+Garamond" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/moment@2.19.1/moment.min.js"></script>
+<style>
+h1 {
+    font-family: 'Cinzel', serif;
+    font-family: 'EB Garamond', serif;
+}
+</style>
+</head>
+
+<body style="margin-right: auto; margin-left: auto;">
+    <div class="container" style="height:295px;">
+        <div style="background-color: black; text-align: center; color: white;"  class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <h1 class="display-4"><img src="marvel.jpg" style="width: 270px" alt="Italian Trulli"></h1>
+                <h1>ancestry.com</h1>
+                <p class="lead">Find out which Marvel hero you are related to!</p>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm">
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" style="height: 230px;" src="https://www.screengeek.net/wp-content/uploads/2017/03/chris-evans-captain-america.png"
+                            alt="Card image cap">
+                        <div class="card-body">
+                            <p class="card-text">A picture of you!</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm">
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" style="height: 230px;" src="https://www.quirkybyte.com/wp-content/uploads/2018/08/Captain-America-e1534158565845.png"
+                            alt="Card image cap">
+                        <div class="card-body">
+                            <p class="card-text">Your Marvel Ancestor!</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm">
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">Captain America</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">Super Soldier</h6>
+                            <p class="card-text">Some quick example text to build on the card title and make up the
+                                bulk of the card's content.</p>
+                            <a href="#" class="card-link">Bio link</a>
+                            <a href="#" class="card-link">Another link</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button style="margin: 20px;" type="button" class="btn btn-primary">Find a Match!</button>
+            <button style="margin: 20px;" class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample"
+                aria-expanded="false" aria-controls="collapseExample">
+                Click here to view past results
+            </button>
+            </p>
+            <div class="collapse" id="collapseExample">
+                <div class="card card-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">Sam Rehlinger was matched with Deadpool</li>
+                        <li class="list-group-item">John Doe was matched with Captain America</li>
+                        <li class="list-group-item">Jane Doe was matched with Scarlet Witch</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
