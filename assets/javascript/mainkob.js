@@ -1,7 +1,4 @@
-// function jupload()
-// {
-//     $(".imageholder").append('<img src="./images/loading.gif">');
-// }
+
 
 function juploadstop(result)
 {
@@ -68,29 +65,19 @@ var config = {
     // Uploads employee data to the database
     database.ref().push(newMatch);
 
-  
     alert("REMOVE BEFORE FLIGHT: Match successfully added");
-  
   
   // 3. Create Firebase event for adding employee to the database and a row in the html when a user adds an entry
   database.ref().on("child_added", function(childSnapshot) {
-    console.log(childSnapshot.val());
-  
-    // Store everything into a variable.
-    var Name = childSnapshot.val().heroName;
-    var matchDate = childSnapshot.val().matchDate;
-
-  
-    // Prettify the employee start
-    var matchDatePretty = moment.unix(matchDate).format("MM/DD/YYYY");
   
     // Create the new row
-    var newRow = $("<tr>").append(
-      $("<td>").text("On " + matchDatePretty + " you were matched with " + heroName),
+    var newRow = $("<ul class='list-group'>").append(
+      $("<li class='list-group-item'>").text("On " + matchDate + " you were matched with " + heroName),
     );
   
     // Append the new row to the table
-    $("#history-table > tbody").append(newRow);
+    $("#resultsList").append(newRow)
+    
   });
   
   }
