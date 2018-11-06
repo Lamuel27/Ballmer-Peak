@@ -30,10 +30,6 @@ $('#submit_form').on("click", function(){
   });
 
 
-// function lastResult (heroName) {
-
-// $('.list-group').append("<li class='list-group-item'>"+"You could be related to " + heroname +" </li>")
-// }
 
 
 var config = {
