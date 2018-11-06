@@ -21,8 +21,10 @@
     <script src="https://cdn.jsdelivr.net/npm/moment@2.19.1/moment.min.js"></script>
     <script type="text/javascript" src="assets/javascript/mainkob.js"></script>
     <script type="text/javascript" src="assets/javascript/main.js"></script>
-<style>
-h1 {
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+    <style>
+        h1 {
     font-family: 'Cinzel', serif;
     font-family: 'EB Garamond', serif;
 }
@@ -31,7 +33,7 @@ h1 {
 
 <body style="margin-right: auto; margin-left: auto;">
     <div class="container" style="height:295px;">
-        <div style="background-color: black; text-align: center; color: white;"  class="jumbotron jumbotron-fluid">
+        <div style="background-color: black; text-align: center; color: white;" class="jumbotron jumbotron-fluid">
             <div class="container">
                 <h1 class="display-4"><img src="assets/images/marvel.jpg" style="width: 270px" alt="Italian Trulli"></h1>
                 <h1>ancestry.com</h1>
@@ -42,8 +44,7 @@ h1 {
             <div class="row">
                 <div class="col-sm">
                     <div class="card" style="width: 18rem;">
-                        <img id = "prof-pic" class="card-img-top" style="height: 230px;" 
-                            alt="Card image cap">
+                        <img id="prof-pic" class="card-img-top" style="height: 230px;" alt="Card image cap">
                         <div class="card-body">
                             <p class="card-text">A picture of you!</p>
                         </div>
@@ -51,19 +52,19 @@ h1 {
                 </div>
                 <div class="col-sm">
                     <div class="card" style="width: 18rem;">
-                        <img id = "marvel-anc" class="card-img-top" style="height: 230px;" 
-                            alt="Card image cap">
+                        <img id="marvel-anc" class="card-img-top" style="height: 230px;" alt="Card image cap">
                         <div class="card-body">
-                            <p  id = "character" class="card-text"></p>
+                            <p id="character" class="card-text"></p>
                         </div>
                     </div>
                 </div>
                 <div class="col-sm">
                     <div class="card" style="width: 18rem;">
                         <div class="card-body">
-                            <h5 id = "character" class="card-title">Captain America</h5>
-                            <h6 id = "superPower" class="card-subtitle mb-2 text-muted">Super Soldier</h6>
-                            <p id = "char-bio" class="card-text">Some quick example text to build on the card title and make up the
+                            <h5 id="character" class="card-title">Captain America</h5>
+                            <h6 id="superPower" class="card-subtitle mb-2 text-muted">Super Soldier</h6>
+                            <p id="char-bio" class="card-text">Some quick example text to build on the card title and
+                                make up the
                                 bulk of the card's content.</p>
                             <a href="#" class="card-link">Bio link</a>
                             <a href="#" class="card-link">Another link</a>
@@ -71,13 +72,12 @@ h1 {
                     </div>
                 </div>  
             </div>
-            <form action="fileUpload.php" method="post" enctype="multipart/form-data" target="upload_target"  onsubmit="jupload();"  id="form1" >
-                <div style="visibility:'hidden';" class="imageholder"> <!-- a gif image to show that the process wasn't finished -->
-                </div>
-                <input style="margin: 18px;" type="file" name="imgfile" /> 
-                <input id="submit_form" type="submit" name="uploadButton" class="btn btn-primary" value="Submit" />
+            <form>
+                <input style="margin: 18px;" type="text" id="input">
+                <button type="button" class="btn btn-primary" id="submit">Add your photo!</button>
+                <img id='photo'>
             </form>
-            <button id = "match" style="margin: 20px;" type="button" class="btn btn-primary">Find a Match!</button>
+            <button id="match" style="margin: 20px;" type="button" class="btn btn-primary">Find a Match!</button>
             <button style="margin: 20px;" class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample"
                 aria-expanded="false" aria-controls="collapseExample">
                 Click here to view past results
@@ -86,9 +86,6 @@ h1 {
             <div class="collapse" id="collapseExample">
                 <div class="card card-body">
                     <ul class="list-group" id="resultsList">
-                        <li class="list-group-item">Sam Rehlinger was matched with Deadpool</li>
-                        <li class="list-group-item">John Doe was matched with Captain America</li>
-                        <li class="list-group-item">Jane Doe was matched with Scarlet Witch</li>
                     </ul>
                 </div>
             </div>

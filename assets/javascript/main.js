@@ -119,3 +119,13 @@ var compareFace = function () {
   }
 
 //   displaying the uploaded image
+$('#submit').click(function(){
+    var photo = $('#input').val();
+    $('#prof-pic').attr('<img src=' + photo + '>')
+  });
+// comparing the uploaded image with array of heroes
+
+// displaying details about the marvel hero
+
+// pushing past results from Firebase to the table
+
