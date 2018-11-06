@@ -149,9 +149,14 @@ var compareFace = function () {
   }
 
 //   displaying the uploaded image
+
+
+//need to pull name from face++ results
 var story = function getOriginStory() {
 
-  var results = $(this).data();
+  //dont know what to put into area after .data
+  var results = $(this).data("#marvel-anc");
+  //api query works inmarvel API, but not when plugged into web address
   var queryURL = "https://gateway.marvel.com:443/v1/public/characters/stories?name=" + results + "&apikey=c91735cb42287e990215b6bd8f5c6642"
  
   }
@@ -175,4 +180,3 @@ var story = function getOriginStory() {
 
 })
 
-/
