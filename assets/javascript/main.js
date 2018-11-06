@@ -54,11 +54,64 @@ var config = {
 
 
 
-$(document).ready(function(){
-    $("#collapseExample").click(function() {
-        $('.list-group').append("<li class='list-group-item'>"+"You could be related to " + heroname +" </li>")
-    });
-});
+  var config = {
+    apiKey: "AIzaSyBMxbRavlaUZpJQWiMiCoFuT1hT_un6iQ0",
+    authDomain: "ballmer-peak-project1.firebaseapp.com",
+    databaseURL: "https://ballmer-peak-project1.firebaseio.com",
+    projectId: "ballmer-peak-project1",
+    storageBucket: "",
+    messagingSenderId: "520183238866"
+  };
+  
+  firebase.initializeApp(config);
+  
+  var database = firebase.database();
+  
+ console.log(logActivity("spiderman"))
+
+  function logActivity(hero) { 
+  
+    //local variables for hero and date
+    var heroName = hero
+    var matchDate = moment().format("MM/DD/YYYY");
+
+    //create object to store hero and date
+    var newMatch = {
+      hero: heroName,
+      date: matchDate
+    };
+  
+    // push the data to the database
+    database.ref().push(newMatch);
+
+  //THIS IS TO BE REMOVED BEFORE FLIGHT
+    alert("REMOVE BEFORE FLIGHT: Match successfully added");
+  
+  
+  // Create Firebase event for adding record to the database
+  database.ref().on("child_added", function(childSnapshot) {
+    console.log(childSnapshot.val());
+  
+    // Store everything into a variable.
+    var Name = childSnapshot.val().heroName;
+    var matchDate = childSnapshot.val().matchDate;
+
+
+    // Prettify the employee start -- This may not be needed
+    var matchDatePretty = moment.unix(matchDate).format("MM/DD/YYYY");
+  
+    // Create the new row
+    var newRow = $("<tr>").append(
+      $("<td>").text("On " + matchDatePretty + " you were matched with " + heroName),
+    );
+  
+    // Append the new row to the table
+    $("#history-table > tbody").append(newRow);
+  });
+  
+  }
+
+
 
 var compareFace = function () {
 
