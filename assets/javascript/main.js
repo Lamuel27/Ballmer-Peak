@@ -149,3 +149,30 @@ var compareFace = function () {
   }
 
 //   displaying the uploaded image
+var story = function getOriginStory() {
+
+  var results = $(this).data();
+  var queryURL = "https://gateway.marvel.com:443/v1/public/characters/stories?name=" + results + "&apikey=c91735cb42287e990215b6bd8f5c6642"
+ 
+  }
+
+  $.ajax({
+    url: queryURL,
+    method: "GET"
+  })
+
+  .then(function(response) {
+    console.log(queryURL);
+
+    for (var i = 0; i < results.length; i++) {
+
+    
+  var character = $("#character").text(data.results.name);
+  var bio = $("#char-bio").text(data.results.description);
+     
+    }
+
+
+})
+
+/
