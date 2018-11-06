@@ -51,12 +51,47 @@ var config = {
   firebase.initializeApp(config);
   
   var database = firebase.database();
+  
+ console.log(logActivity("spiderman"))
 
+  function logActivity(hero) { 
+  
 
+    var heroName = hero
+    var matchDate = moment().format("MM/DD/YYYY");
 
-$(document).ready(function(){
-    $("#collapseExample").click(function() {
-        $('.list-group').append("<li class='list-group-item'>"+"You could be related to " + heroname +" </li>")
-    });
-});
+    var newMatch = {
+      hero: heroName,
+      date: matchDate
+    };
+  
+    // Uploads employee data to the database
+    database.ref().push(newMatch);
+
+  
+    alert("REMOVE BEFORE FLIGHT: Match successfully added");
+  
+  
+  // 3. Create Firebase event for adding employee to the database and a row in the html when a user adds an entry
+  database.ref().on("child_added", function(childSnapshot) {
+    console.log(childSnapshot.val());
+  
+    // Store everything into a variable.
+    var Name = childSnapshot.val().heroName;
+    var matchDate = childSnapshot.val().matchDate;
+
+  
+    // Prettify the employee start
+    var matchDatePretty = moment.unix(matchDate).format("MM/DD/YYYY");
+  
+    // Create the new row
+    var newRow = $("<tr>").append(
+      $("<td>").text("On " + matchDatePretty + " you were matched with " + heroName),
+    );
+  
+    // Append the new row to the table
+    $("#history-table > tbody").append(newRow);
+  });
+  
+  }
 
