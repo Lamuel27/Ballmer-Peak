@@ -60,3 +60,37 @@ $(document).ready(function(){
     });
 });
 
+var compareFace = function () {
+
+    var name = $(this).attr("data-name");
+    var queryURL = "https://api-us.faceplusplus.com/facepp/v3/search" +
+      name + "AuLF26cH7L5MFtwVuC9hhqCQbiB6K8HR";
+
+    $.ajax({
+      url: queryURL,
+      method: "POST"
+    })
+      .then(function (response) {
+        var results = response.data;
+        for (var i = 0; i < results.length; i++) {
+
+        //   var gifDiv = $("<div class='item'>");
+        //   gifDiv.addClass("gifDiv");
+        //   // pulling rating of gif
+        //   // var rating = results[i].rating;
+        //   var rating = $("<p>").text("Rating: " + results[i].rating);
+        //   gifDiv.append(rating);
+        //   // pulling gif
+        //   var nameImage = $("<img>");
+        //   nameImage.attr("src", results[i].images.fixed_height_small_still.url);
+        //   nameImage.attr("data-still", results[i].images.fixed_height_small_still.url);
+        //   nameImage.attr("data-animate", results[i].images.fixed_height_small.url);
+        //   nameImage.attr("data-state", "still");
+        //   // nameImage.attr("onclick", playPause)
+        //   nameImage.addClass("image");
+        //   gifDiv.append(nameImage);
+
+          $("#marvel-anc").append(gifDiv);
+        }
+      });
+  }
