@@ -94,3 +94,5 @@ var compareFace = function () {
         }
       });
   }
+
+//   displaying the uploaded image
