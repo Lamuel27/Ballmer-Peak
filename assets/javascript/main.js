@@ -156,3 +156,33 @@ database.ref().on("child_added", function(childSnapshot) {
 });
 
 }
+
+
+//OFFICIAL NAMES
+// Ant-Man
+// BlackPanther
+// BlackWidow
+// Bucky
+// Captain America
+// Captain Marvel
+// Deadpool
+// Hawkeye
+// Hank Pym
+// Hela
+// Hulk
+// Iron Man
+// Iron Monger
+// Jessica Jones
+// Loki
+// Nakia
+// Nick Fury
+// Professor X
+// Quick Silver
+// Rhones
+// Scarlet Witch
+// Spider-Man
+// Starlord
+// The Wasp
+// Thor
+// Valkerie
+// Wolverine
