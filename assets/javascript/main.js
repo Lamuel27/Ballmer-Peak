@@ -1,7 +1,23 @@
-// function jupload()
-// {
-//     $(".imageholder").append('<img src="./images/loading.gif">');
-// }
+///////////////////////////
+//Firebase configuration //
+///////////////////////////
+
+var config = {
+  apiKey: "AIzaSyBMxbRavlaUZpJQWiMiCoFuT1hT_un6iQ0",
+  authDomain: "ballmer-peak-project1.firebaseapp.com",
+  databaseURL: "https://ballmer-peak-project1.firebaseio.com",
+  projectId: "ballmer-peak-project1",
+  storageBucket: "",
+  messagingSenderId: "520183238866"
+};
+
+firebase.initializeApp(config);
+
+var database = firebase.database();
+
+
+
+
 
 function juploadstop(result)
 {
@@ -31,56 +47,6 @@ $('#submit_form').on("click", function(){
     $('#div_to_display_image').html("<img src='path/image_file.jpg' alt='this' />");
   
   });
-
-
-var config = {
-    apiKey: "AIzaSyBMxbRavlaUZpJQWiMiCoFuT1hT_un6iQ0",
-    authDomain: "ballmer-peak-project1.firebaseapp.com",
-    databaseURL: "https://ballmer-peak-project1.firebaseio.com",
-    projectId: "ballmer-peak-project1",
-    storageBucket: "",
-    messagingSenderId: "520183238866"
-  };
-  
-  firebase.initializeApp(config);
-  
-  var database = firebase.database();
-
-  
- console.log(logActivity("spiderman"))
-
- function logActivity(hero) { 
-  
-
-    //local variables to hold hero name and date
-    var heroName = hero
-    var matchDate = moment().format("MM/DD/YYYY");
-
-    var newMatch = {
-      hero: heroName,
-      date: matchDate
-    };
-  
-    // Uploads employee data to the database
-    database.ref().push(newMatch);
-
-    alert("REMOVE BEFORE FLIGHT: Match successfully added");
-  
-  // 3. Create Firebase event for adding employee to the database and a row in the html when a user adds an entry
-  database.ref().on("child_added", function(childSnapshot) {
-  
-    // Create the new row
-    var newRow = $("<ul class='list-group'>").append(
-      $("<li class='list-group-item'>").text("On " + matchDate + " you were matched with " + heroName),
-    );
-  
-    // Append the new row to the table
-    $("#resultsList").append(newRow)
-    
-  });
-  
-  }
-
 
 
 var compareFace = function () {
@@ -123,9 +89,100 @@ $('#submit').click(function(){
     var photo = $('#input').val();
     $('#prof-pic').attr('<img src=' + photo + '>')
   });
-// comparing the uploaded image with array of heroes
 
-// displaying details about the marvel hero
 
-// pushing past results from Firebase to the table
+///////////////////////////////////////////////////////
+// comparing the uploaded image with array of heroes //
+///////////////////////////////////////////////////////
 
+
+
+//////////////////////////////////////////////
+// displaying details about the marvel hero //
+//////////////////////////////////////////////
+
+function getDescription(heroName) {
+
+  // This is our API key.
+  var APIKey = "51bf07f7552914c23894d501b60792a9";
+  var queryURL = "https://gateway.marvel.com:443/v1/public/characters?name=" + heroName + "&apikey=" + APIKey;
+
+  // We then created an AJAX call
+  $.ajax({
+    url: queryURL,
+    method: "GET"
+  }).then(function(response) {
+
+    //the object returns the description here:
+    console.log(response.data.results[0].description)
+  });
+  
+  //display the description in the char-bio div
+  $("#char-bio").text(response.data.results[0].description)
+}
+
+
+
+
+/////////////////////////////////////////////////////
+// pushing past results from Firebase to the table //
+/////////////////////////////////////////////////////
+
+function logActivity(hero) { 
+  
+  //local variables to hold hero name and date
+  var heroName = hero
+  var matchDate = moment().format("MM/DD/YYYY");
+
+  var newMatch = {
+    hero: heroName,
+    date: matchDate
+  };
+
+  // Uploads employee data to the database
+  database.ref().push(newMatch);
+
+// 3. Create Firebase event for adding employee to the database and a row in the html when a user adds an entry
+database.ref().on("child_added", function(childSnapshot) {
+
+  // Create the new row
+  var newRow = $("<ul class='list-group'>").append(
+    $("<li class='list-group-item'>").text("On " + matchDate + " you were matched with " + heroName),
+  );
+
+  // Append the new row to the table
+  $("#resultsList").append(newRow)
+  
+});
+
+}
+
+
+//OFFICIAL NAMES
+// Ant-Man
+// BlackPanther
+// BlackWidow
+// Bucky
+// Captain America
+// Captain Marvel
+// Deadpool
+// Hawkeye
+// Hank Pym
+// Hela
+// Hulk
+// Iron Man
+// Iron Monger
+// Jessica Jones
+// Loki
+// Nakia
+// Nick Fury
+// Professor X
+// Quick Silver
+// Rhones
+// Scarlet Witch
+// Spider-Man
+// Starlord
+// The Wasp
+// Thor
+// Valkerie
+// Wolverine
