@@ -32,20 +32,20 @@ $('#submit_form').on("click", function(){
 
 
 
-var config = {
-    apiKey: "AIzaSyBMxbRavlaUZpJQWiMiCoFuT1hT_un6iQ0",
-    authDomain: "ballmer-peak-project1.firebaseapp.com",
-    databaseURL: "https://ballmer-peak-project1.firebaseio.com",
-    projectId: "ballmer-peak-project1",
-    storageBucket: "",
-    messagingSenderId: "520183238866"
-  };
+// var config = {
+//     apiKey: "AIzaSyBMxbRavlaUZpJQWiMiCoFuT1hT_un6iQ0",
+//     authDomain: "ballmer-peak-project1.firebaseapp.com",
+//     databaseURL: "https://ballmer-peak-project1.firebaseio.com",
+//     projectId: "ballmer-peak-project1",
+//     storageBucket: "",
+//     messagingSenderId: "520183238866"
+//   };
   
-  firebase.initializeApp(config);
+//   firebase.initializeApp(config);
   
-  var database = firebase.database();
+//   var database = firebase.database();
   
- console.log(logActivity("spiderman"))
+//  console.log(logActivity("spiderman"))
 
   function logActivity(hero) { 
   
@@ -82,18 +82,18 @@ var config = {
 //Firebase configuration //
 ///////////////////////////
 
-var config = {
-  apiKey: "AIzaSyBMxbRavlaUZpJQWiMiCoFuT1hT_un6iQ0",
-  authDomain: "ballmer-peak-project1.firebaseapp.com",
-  databaseURL: "https://ballmer-peak-project1.firebaseio.com",
-  projectId: "ballmer-peak-project1",
-  storageBucket: "",
-  messagingSenderId: "520183238866"
-};
+// var config = {
+//   apiKey: "AIzaSyBMxbRavlaUZpJQWiMiCoFuT1hT_un6iQ0",
+//   authDomain: "ballmer-peak-project1.firebaseapp.com",
+//   databaseURL: "https://ballmer-peak-project1.firebaseio.com",
+//   projectId: "ballmer-peak-project1",
+//   storageBucket: "",
+//   messagingSenderId: "520183238866"
+// };
 
-firebase.initializeApp(config);
+// firebase.initializeApp(config);
 
-var database = firebase.database();
+// var database = firebase.database();
 
 
 

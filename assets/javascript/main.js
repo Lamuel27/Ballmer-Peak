@@ -15,7 +15,7 @@ firebase.initializeApp(config);
 
 var database = firebase.database();
 
-
+console.log(getDescription("Spider-Man"));
 
 
 
@@ -160,8 +160,8 @@ database.ref().on("child_added", function(childSnapshot) {
 
 //OFFICIAL NAMES
 // Ant-Man
-// BlackPanther
-// BlackWidow
+// Black Panther
+// Black Widow
 // Bucky
 // Captain America
 // Captain Marvel
