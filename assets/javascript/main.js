@@ -115,12 +115,14 @@ function getDescription(heroName) {
   }).then(function(response) {
 
     //the object returns the description here:
-    console.log(response.data.results[0].description)
-    marvelResponse=response.data.results[0].description
+    console.log(response.data.results[0].description);
+    marvelResponse=response.data.results[0].description;
+    console.log(marvelResponse);
   });
   
   //display the description in the char-bio div
-  $("#char-bio").text(marvelResponse)
+  // $("#char-bio").text(marvelResponse);
+  document.getElementById("char-bio").text(marvelResponse)
 }
 
 
