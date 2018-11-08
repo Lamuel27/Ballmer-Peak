@@ -20,7 +20,8 @@
     <script src="https://www.gstatic.com/firebasejs/5.5.7/firebase.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/moment@2.19.1/moment.min.js"></script>
     <script type="text/javascript" src="assets/javascript/main.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <!-- <script type="module" src="assets/javascript/object.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
     <style>
         h1 {
@@ -72,9 +73,13 @@
                 </div>
             </div>
             <form>
-                <input style="margin: 18px;" type="text" id="input">
-                <button type="button" class="btn btn-primary" id="submit">Add your photo!</button>
-                <img id='photo'>
+                <!-- <input type="text" id="url"/>  <!--text input-->
+                <!-- <input type="button" id="btn" value="show image" /> -->
+                <input type='file' />
+                <!-- <img id="myImg" src="#" /> -->
+                <div>
+
+                    <!-- <img id='photo'> -->
             </form>
             <button id="match" style="margin: 20px;" type="button" class="btn btn-primary">Find a Match!</button>
             <button style="margin: 20px;" class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample"
