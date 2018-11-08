@@ -106,7 +106,8 @@ function getDescription(heroName) {
   // This is our API key.
   var APIKey = "51bf07f7552914c23894d501b60792a9";
   var queryURL = "https://gateway.marvel.com:443/v1/public/characters?name=" + heroName + "&apikey=" + APIKey;
-  var marvelResponse
+  var marvelResponse = ""
+  var marvelCharacter = ""
 
   // We then created an AJAX call
   $.ajax({
@@ -115,13 +116,23 @@ function getDescription(heroName) {
   }).then(function(response) {
 
     //the object returns the description here:
-    console.log(response.data.results[0].description)
-    marvelResponse=response.data.results[0].description
+    console.log(response.data.results[0].description);
+    marvelResponse = response.data.results[0].description;
+
+    console.log(marvelResponse);
+
+    console.log(response.data.results[0].name);
+    marvelCaracter = response.data.results[0].name;
+
+    console.log(marvelCharacter);
   });
   
   //display the description in the char-bio div
-  $("#char-bio").text(marvelResponse)
+  $("#char-bio").text(marvelResponse);
+  //display name in character div
+  $("#character").text(marvelCharacter);
 }
+
 
 
 
