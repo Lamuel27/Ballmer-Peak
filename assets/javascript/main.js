@@ -128,7 +128,7 @@ var compareFace = function () {
 //   displaying the uploaded image
 
 // $('#btn').on('click', function () {           //on click of button
-//     $('#prof-pic').attr('src', $('#url').val());  //get the input value and 
+//     $('#prof-pic').attr('src', $('#url').val(""));  //get the input value and 
 //     console.log('#url');
 //     compareFace()
 
