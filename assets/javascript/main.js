@@ -19,49 +19,46 @@ console.log(getDescription("Spider-Man"));
 console.log(logActivity("Spider-Man"));
 
 
-function juploadstop(result)
-{
-    if(result==0)
-    {
-        $(".imageholder").html("");
+function juploadstop(result) {
+  if (result == 0) {
+    $(".imageholder").html("");
 
-    }
-    // the result will be the path to the image
-    else if(result!=0)
-    {
-        $(".imageholder").html("");
-        // imageplace is the class of the div where you want to add the image  
-        $(".imageplace").append("<img src='"+result+"'>");
-    }   
+  }
+  // the result will be the path to the image
+  else if (result != 0) {
+    $(".imageholder").html("");
+    // imageplace is the class of the div where you want to add the image  
+    $(".imageplace").append("<img src='" + result + "'>");
+  }
 }
 
-$('#submit_form').on("click", function(){
-    $.ajax({
-      type: 'POST',
-      url: path/fileUpload.php,
-      data: image_input_name
-    });
-  
-  //after submitting, get the url of the image form the server
-  
-    $('#div_to_display_image').html("<img src='path/image_file.jpg' alt='this' />");
-  
+$('#submit_form').on("click", function () {
+  $.ajax({
+    type: 'POST',
+    url: path / fileUpload.php,
+    data: image_input_name
   });
+
+  //after submitting, get the url of the image form the server
+
+  $('#div_to_display_image').html("<img src='path/image_file.jpg' alt='this' />");
+
+});
 
 
 var compareFace = function () {
 
-    var name = $(this).attr("data-name");
-    var queryURL = "https://api-us.faceplusplus.com/facepp/v3/search" +
-      name + "AuLF26cH7L5MFtwVuC9hhqCQbiB6K8HR";
+  var name = $(this).attr("data-name");
+  var queryURL = "https://api-us.faceplusplus.com/facepp/v3/search" +
+    name + "AuLF26cH7L5MFtwVuC9hhqCQbiB6K8HR";
 
-    $.ajax({
-      url: queryURL,
-      method: "POST"
-    })
-      .then(function (response) {
-        var results = response.data;
-        for (var i = 0; i < results.length; i++) {
+  $.ajax({
+    url: queryURL,
+    method: "POST"
+  })
+    .then(function (response) {
+      var results = response.data;
+      for (var i = 0; i < results.length; i++) {
 
         //   var gifDiv = $("<div class='item'>");
         //   gifDiv.addClass("gifDiv");
@@ -79,16 +76,16 @@ var compareFace = function () {
         //   nameImage.addClass("image");
         //   gifDiv.append(nameImage);
 
-          $("#marvel-anc").append(gifDiv);
-        }
-      });
-  }
+        $("#marvel-anc").append(gifDiv);
+      }
+    });
+}
 
 //   displaying the uploaded image
-$('#submit').click(function(){
-    var photo = $('#input').val();
-    $('#prof-pic').attr('<img src=' + photo + '>')
-  });
+$('#submit').click(function () {
+  var photo = $('#input').val();
+  $('#prof-pic').attr('<img src=' + photo + '>')
+});
 
 
 ///////////////////////////////////////////////////////
@@ -113,27 +110,25 @@ function getDescription(heroName) {
   $.ajax({
     url: queryURL,
     method: "GET"
-  }).then(function(response) {
+  }).then(function (response) {
 
     //the object returns the description here:
     console.log(response.data.results[0].description);
-    marvelResponse=response.data.results[0].description;
+    marvelResponse = response.data.results[0].description;
     console.log(marvelResponse);
   });
-  
+
   //display the description in the char-bio div
   // $("#char-bio").text(marvelResponse);
-  document.getElementById("char-bio").innerHTML= marvelResponse;
-    marvelResponse = response.data.results[0].description;
+  document.getElementById("char-bio").innerHTML = marvelResponse;
+  marvelResponse = response.data.results[0].description;
 
-    console.log(marvelResponse);
+  console.log(marvelResponse);
 
-    console.log(response.data.results[0].name);
-    marvelCaracter = response.data.results[0].name;
+  console.log(response.data.results[0].name);
+  marvelCaracter = response.data.results[0].name;
 
-    console.log(marvelCharacter);
-  });
-  
+  console.log(marvelCharacter);
   //display the description in the char-bio div
   $("#char-bio").text(marvelResponse);
   //display name in character div
@@ -148,8 +143,8 @@ function getDescription(heroName) {
 // pushing past results from Firebase to the table //
 /////////////////////////////////////////////////////
 
-function logActivity(hero) { 
-  
+function logActivity(hero) {
+
   //local variables to hold hero name and date
   var heroName = hero
   var matchDate = moment().format("MM/DD/YYYY");
@@ -162,18 +157,18 @@ function logActivity(hero) {
   // Uploads employee data to the database
   database.ref().push(newMatch);
 
-// 3. Create Firebase event for adding employee to the database and a row in the html when a user adds an entry
-database.ref().on("child_added", function(childSnapshot) {
+  // 3. Create Firebase event for adding employee to the database and a row in the html when a user adds an entry
+  database.ref().on("child_added", function (childSnapshot) {
 
-  // Create the new row
-  var newRow = $("<ul class='list-group'>").append(
-    $("<li class='list-group-item'>").text("On " + matchDate + " you were matched with " + heroName),
-  );
+    // Create the new row
+    var newRow = $("<ul class='list-group'>").append(
+      $("<li class='list-group-item'>").text("On " + matchDate + " you were matched with " + heroName),
+    );
 
-  // Append the new row to the table
-  $("#resultsList").append(newRow)
-  
-});
+    // Append the new row to the table
+    $("#resultsList").append(newRow)
+
+  });
 
 }
 
