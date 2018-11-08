@@ -122,7 +122,7 @@ function getDescription(heroName) {
   
   //display the description in the char-bio div
   // $("#char-bio").text(marvelResponse);
-  document.getElementById("char-bio").text(marvelResponse)
+  document.getElementById("char-bio").innerHTML(marvelResponse)
 }
 
 
