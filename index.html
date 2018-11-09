@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
         crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Cinzel|EB+Garamond" rel="stylesheet">
-    <!-- <link rel="stylesheet" href="/box-shadows.min.css"> -->
+   <link rel="stylesheet" href="/box-shadows.min.css"> 
     <link rel="stylesheet" href="assets/css/style.css">
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
@@ -28,11 +28,13 @@
     <script src="https://cdnjs.com/libraries/bulma"></script>
     <!-- <script type="text/javascript" src="assets/javascript/mainkob.js"></script> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-            <!--link for gradient background-->
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
-    <script type="text/javascript" src="assets/javascript/main.js"></script>
+
     <!--link for gradient background-->
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/javascript/main.js"></script>
+   
+    
 
 
 
@@ -128,32 +130,34 @@
 
                     <div class="col-sm-4">
 
+                <form>
+                    <input style="margin: 18px;" type="text" id="input">
+                    <button type="button" class="btn btn-dark" id="submit">Add your photo!</button>
+                    <img id='photo'>
+                </form>
+
+                <button id="match" style="margin: 20px;" type="button" class="btn btn-dark">Find a Match!</button>
+                <button style="margin: 20px;" class="btn btn-dark" type="button" data-toggle="collapse" data-target="#collapseExample"
+                    aria-expanded="false" aria-controls="collapseExample">
+                    Click here to view past results
+                </button>
+                </p>
+                <div class="collapse" id="collapseExample">
+                    <div class="card card-body">
+                        <table class="table table-sm table-hover" id="resultsList">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Recent Searches</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+
+                        <!-- <ul class="list-group" id="resultsList"> -->
+                        <!-- </ul> -->
                     </div>
                 </div>
-                    <div class="row">
-                        <div class="col-sm-4">
+            </div>
+            </div>
 
-                            <button style="margin: 20px;" class="btn btn-primary" type="button" data-toggle="collapse"
-                                data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-                                Click here to view past results
-                            </button>
-                            </p>
-                            <div class="collapse" id="collapseExample">
-                                <div class="card card-body">
-                                    <table class="table table-sm table-hover" id="resultsList">
-                                        <thead>
-                                            <tr>
-                                                <th scope="col">Recent Searches</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                        </tbody>
-                                    </table>
-                                </div>
-                                <!-- <ul class="list-group" id="resultsList"> -->
-                                <!-- </ul> -->
-                            </div>
-                        </div>
-
-                    </div>
-               
