@@ -238,6 +238,11 @@ function logActivity(hero) {
 
   database.ref().on("child_added", function (childSnapshot) {
 
+        //capture the childsnapshot values	  database.ref().on("child_added", function (childSnapshot) {
+          var lastHeroName = childSnapshot.val().hero;	
+          var lastMatchDate = childSnapshot.val().date;
+
+          
     // Create the new row
     var newRow = $("<tr>").append(
       $("<td>").text("On " + lastMatchDate + " you were matched with " + lastHeroName),

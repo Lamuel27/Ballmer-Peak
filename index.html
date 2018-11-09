@@ -25,9 +25,12 @@
         crossorigin="anonymous"></script>
     <script src="https://www.gstatic.com/firebasejs/5.5.7/firebase.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/moment@2.19.1/moment.min.js"></script>
+    <script src="https://cdnjs.com/libraries/bulma"></script>
     <!-- <script type="text/javascript" src="assets/javascript/mainkob.js"></script> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-     <!--link for gradient background-->
+
+    <!--link for gradient background-->
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
     <script type="text/javascript" src="assets/javascript/main.js"></script>
    
@@ -63,10 +66,10 @@
 
             <div class="row">
 
-                <div class="col-sm">
-                    <div class="card" style="width: 18rem;">
+                <div class="col-sm-4">
+                    <div class="card  bShadow-inset" style="width: 18rem;">
 
-                        <img id="prof-pic" class="card-img-top bShadow-inset" style="height: 230px;" alt="Card image cap">
+                        <img id="prof-pic" class="card-img-top" style="height: 230px;" alt="Card image cap">
 
                         <div class="card-body">
                             <p class="card-text">A picture of you!</p>
@@ -75,7 +78,7 @@
                 </div>
 
 
-                <div class="col-sm">
+                <div class="col-sm-4">
                     <div class="card" style="width: 18rem;">
 
                         <div class="card bShadow-inset" style="width: 18rem;">
@@ -87,13 +90,13 @@
                     </div>
                 </div>
 
-                <div class="col-sm">
-                    <div class="card" style="width: 18rem;">
+                <div class="col-sm-4">
+                    <div class="card bShadow-inset" style="width: 18rem;">
 
-                        <div class="card-body">
+                        <div class="card-body" style="height: 296px">
 
 
-                            <h5 id="char-title" class="card-title">Captain America</h5>
+                            <h5 id="char-title" class="card-title"  >Captain America</h5>
                             <h6 id="superPower" class="card-subtitle mb-2 text-muted"></h6>
                             <p id="char-bio" class="card-text">Bio not available for this super hero.</p>
                             <!-- <a href="#" class="card-link">Bio link</a> -->
@@ -101,6 +104,31 @@
                         </div>
                     </div>
                 </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm"-4>
+
+
+                        <form>
+                            <div>
+                            <!-- <input class="input" id="namebox" type="text" placeholder=""> -->
+                            <!-- <button type="button" class="btn btn-primary" id="nameButton">Enter your name</button> -->
+                                </div>
+                                <div>
+                            <input style="margin: 18px;" type="text" id="input">
+                            <button type="button" class="btn btn-primary" id="submit">Add your photo!</button>
+                            <img id='photo'>
+                                </div>
+                        </form>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <button id="match" style="margin: 20px;" type="button" class="btn btn-primary">Find a Match!</button>
+
+
+                    </div>
+
+                    <div class="col-sm-4">
 
                 <form>
                     <input style="margin: 18px;" type="text" id="input">
@@ -132,3 +160,4 @@
                 </div>
             </div>
             </div>
+
