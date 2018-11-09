@@ -15,8 +15,13 @@ firebase.initializeApp(config);
 
 var database = firebase.database();
 
+<<<<<<< HEAD
 console.log(getDescription("Hulk"));
 console.log(logActivity("Hulk"));
+=======
+console.log(getDescription("Spider-Man"));
+console.log(logActivity("Spider-Man"));
+>>>>>>> nothing big moved
 
 
 function juploadstop(result) {
@@ -113,6 +118,7 @@ function getDescription(heroName) {
   }).then(function (response) {
 
     //the object returns the description here:
+<<<<<<< HEAD
     console.log("first: " + response.data.results[0].description);
     marvelResponse = response.data.results[0].description;
     console.log("second: " + marvelResponse);
@@ -132,8 +138,33 @@ function getDescription(heroName) {
   });
 
 }
+=======
+    console.log(response.data.results[0].description);
+    marvelResponse = response.data.results[0].description;
+    console.log(marvelResponse);
+  
+
+  //display the description in the char-bio div
+  // $("#char-bio").text(marvelResponse);
+  //document.getElementById("char-bio").innerHTML = marvelResponse;
+  marvelResponse = response.data.results[0].description;
+
+  console.log(marvelResponse);
+
+  console.log(response.data.results[0].name);
+  marvelCaracter = response.data.results[0].name;
+
+  console.log(marvelCharacter);
+>>>>>>> nothing big moved
 
 
+//display the description in the char-bio div
+$("#char-bio").text(marvelResponse);
+//display name in character div
+$("#character").text(marvelCharacter);
+});
+
+};
 
 
 
@@ -155,6 +186,7 @@ function logActivity(hero) {
   // Uploads employee data to the database
   database.ref().push(newMatch);
 
+<<<<<<< HEAD
   // Create Firebase event for adding the search to the databas
   database.ref().on("child_added", function (childSnapshot) {
 
@@ -169,6 +201,18 @@ function logActivity(hero) {
   
     // Append the new row to the train table
     $("#resultsList > tbody").append(newRow);
+=======
+  // 3. Create Firebase event for adding employee to the database and a row in the html when a user adds an entry
+  database.ref().on("child_added", function (childSnapshot) {
+
+    // Create the new row
+    var newRow = $("<ul class='list-group'>").append(
+      $("<li class='list-group-item'>").text("On " + matchDate + " you were matched with " + heroName),
+    );
+
+    // Append the new row to the table
+    $("#resultsList").append(newRow)
+>>>>>>> nothing big moved
 
   });
 
