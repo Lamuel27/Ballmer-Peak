@@ -25,6 +25,7 @@
     <!-- <script type="text/javascript" src="assets/javascript/mainkob.js"></script> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script type="text/javascript" src="assets/javascript/main.js"></script>
+    <!-- <link rel="stylesheet" href="assets/css/style.css"> -->
 
 
     <style>
@@ -36,7 +37,9 @@
 </head>
 
 <body style="margin-right: auto; margin-left: auto;">
+
     <div class="container" style="height:295px;">
+
         <div style="background-color: black; text-align: center; color: white;" class="jumbotron jumbotron-fluid">
             <div class="container">
                 <h1 class="display-4">
@@ -47,20 +50,22 @@
             </div>
         </div>
         <div class="container">
+
             <div class="row">
+
                 <div class="col-sm">
                     <div class="card" style="width: 18rem;">
 
                         <img id="prof-pic" class="card-img-top bShadow-inset" style="height: 230px;" alt="Card image cap">
-
 
                         <div class="card-body">
                             <p class="card-text">A picture of you!</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-sm">
 
+
+                <div class="col-sm">
                     <div class="card" style="width: 18rem;">
 
                         <div class="card bShadow-inset" style="width: 18rem;">
@@ -71,6 +76,7 @@
                         </div>
                     </div>
                 </div>
+
                     <div class="col-sm">
                         <div class="card" style="width: 18rem;">
 
@@ -91,6 +97,7 @@
                     <button type="button" class="btn btn-primary" id="submit">Add your photo!</button>
                     <img id='photo'>
                 </form>
+                
                 <button id="match" style="margin: 20px;" type="button" class="btn btn-primary">Find a Match!</button>
                 <button style="margin: 20px;" class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample"
                     aria-expanded="false" aria-controls="collapseExample">
@@ -99,15 +106,18 @@
                 </p>
                 <div class="collapse" id="collapseExample">
                     <div class="card card-body">
-                        <table class="table table-sm table-hover" id="resultsList">
-                            <thead>
-                                <tr>
-                                    <th scope="col">Recent Searches</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                            </tbody>
-                        </table>
+                            <table class="table table-sm table-hover" id="resultsList">
+                                    <thead>
+                                      <tr>
+                                        <th scope="col">Recent Searches</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                    </tbody>
+                                  </table>
+
+                        <!-- <ul class="list-group" id="resultsList"> -->
+                        <!-- </ul> -->
                     </div>
                 </div>
             </div>
