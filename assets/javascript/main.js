@@ -15,13 +15,8 @@ firebase.initializeApp(config);
 
 var database = firebase.database();
 
-<<<<<<< HEAD
-console.log(getDescription("Hulk"));
-console.log(logActivity("Hulk"));
-=======
 console.log(getDescription("Spider-Man"));
 console.log(logActivity("Spider-Man"));
->>>>>>> nothing big moved
 
 
 function juploadstop(result) {
@@ -118,27 +113,6 @@ function getDescription(heroName) {
   }).then(function (response) {
 
     //the object returns the description here:
-<<<<<<< HEAD
-    console.log("first: " + response.data.results[0].description);
-    marvelResponse = response.data.results[0].description;
-    console.log("second: " + marvelResponse);
-
-    console.log(response);
-
-    console.log("fourth: " + response.data.results[0].name);
-    marvelCharacter = response.data.results[0].name;
-  
-    console.log("Fifth: " +marvelCharacter);
-  
-    //display the description in the char-bio div
-    $("#char-bio").text(marvelResponse);
-    //display name in character div
-    $("#char-title").text(marvelCharacter);
-
-  });
-
-}
-=======
     console.log(response.data.results[0].description);
     marvelResponse = response.data.results[0].description;
     console.log(marvelResponse);
@@ -155,7 +129,6 @@ function getDescription(heroName) {
   marvelCaracter = response.data.results[0].name;
 
   console.log(marvelCharacter);
->>>>>>> nothing big moved
 
 
 //display the description in the char-bio div
@@ -186,22 +159,6 @@ function logActivity(hero) {
   // Uploads employee data to the database
   database.ref().push(newMatch);
 
-<<<<<<< HEAD
-  // Create Firebase event for adding the search to the databas
-  database.ref().on("child_added", function (childSnapshot) {
-
-    //capture the childsnapshot values
-    var lastHeroName = childSnapshot.val().hero;
-    var lastMatchDate = childSnapshot.val().date;
-
-    //create a new row i the table
-    var newRow = $("<tr>").append(
-      $("<td>").text("On " + lastMatchDate + " you were matched with " + lastHeroName),
-    );
-  
-    // Append the new row to the train table
-    $("#resultsList > tbody").append(newRow);
-=======
   // 3. Create Firebase event for adding employee to the database and a row in the html when a user adds an entry
   database.ref().on("child_added", function (childSnapshot) {
 
@@ -212,7 +169,6 @@ function logActivity(hero) {
 
     // Append the new row to the table
     $("#resultsList").append(newRow)
->>>>>>> nothing big moved
 
   });
 
