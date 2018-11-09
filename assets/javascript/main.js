@@ -15,8 +15,8 @@ firebase.initializeApp(config);
 
 var database = firebase.database();
 
-// console.log(getDescription("Hulk"));
-// console.log(logActivity("Hulk"));
+console.log(getDescription("Hulk"));
+console.log(logActivity("Hulk"));
 
 
 function juploadstop(result) {
