@@ -2,6 +2,71 @@
 //Firebase configuration //
 ///////////////////////////
 
+
+//background gradient code//
+var colors = new Array(
+  [62,35,255],
+  [60,255,60],
+  [149,35,98],
+  [45,175,230],
+  [23,0,255],
+  [25,128,0]);
+
+var step = 0;
+//color table indices for: 
+// current color left
+// next color left
+// current color right
+// next color right
+var colorIndices = [0,1,2,3];
+
+//transition speed
+var gradientSpeed = 0.002;
+
+function updateGradient()
+{
+  
+  if ( $===undefined ) return;
+  
+var c0_0 = colors[colorIndices[0]];
+var c0_1 = colors[colorIndices[1]];
+var c1_0 = colors[colorIndices[2]];
+var c1_1 = colors[colorIndices[3]];
+
+var istep = 1 - step;
+var r1 = Math.round(istep * c0_0[0] + step * c0_1[0]);
+var g1 = Math.round(istep * c0_0[1] + step * c0_1[1]);
+var b1 = Math.round(istep * c0_0[2] + step * c0_1[2]);
+var color1 = "rgb("+r1+","+g1+","+b1+")";
+
+var r2 = Math.round(istep * c1_0[0] + step * c1_1[0]);
+var g2 = Math.round(istep * c1_0[1] + step * c1_1[1]);
+var b2 = Math.round(istep * c1_0[2] + step * c1_1[2]);
+var color2 = "rgb("+r2+","+g2+","+b2+")";
+
+ $('#gradient').css({
+   background: "-webkit-gradient(linear, left top, right top, from("+color1+"), to("+color2+"))"}).css({
+    background: "-moz-linear-gradient(left, "+color1+" 0%, "+color2+" 100%)"});
+  
+  step += gradientSpeed;
+  if ( step >= 1 )
+  {
+    step %= 1;
+    colorIndices[0] = colorIndices[1];
+    colorIndices[2] = colorIndices[3];
+    
+    //pick two new target color indices
+    //do not pick the same as the current one
+    colorIndices[1] = ( colorIndices[1] + Math.floor( 1 + Math.random() * (colors.length - 1))) % colors.length;
+    colorIndices[3] = ( colorIndices[3] + Math.floor( 1 + Math.random() * (colors.length - 1))) % colors.length;
+    
+  }
+}
+
+setInterval(updateGradient,10);
+//end of gradient code//
+
+
 var config = {
   apiKey: "AIzaSyBMxbRavlaUZpJQWiMiCoFuT1hT_un6iQ0",
   authDomain: "ballmer-peak-project1.firebaseapp.com",
@@ -17,6 +82,7 @@ var database = firebase.database();
 
 console.log(getDescription("Hulk"));
 console.log(logActivity("Hulk"));
+
 
 
 function juploadstop(result) {
@@ -113,9 +179,13 @@ function getDescription(heroName) {
   }).then(function (response) {
 
     //the object returns the description here:
+
     console.log("first: " + response.data.results[0].description);
+
     marvelResponse = response.data.results[0].description;
+   
     console.log("second: " + marvelResponse);
+  
 
     console.log(response);
 
@@ -132,6 +202,10 @@ function getDescription(heroName) {
   });
 
 }
+
+
+
+
 
 
 
@@ -155,14 +229,16 @@ function logActivity(hero) {
   // Uploads employee data to the database
   database.ref().push(newMatch);
 
+
+  // 3. Create Firebase event for adding employee to the database and a row in the html when a user adds an entry
+
+  
+
   // Create Firebase event for adding the search to the databas
+
   database.ref().on("child_added", function (childSnapshot) {
 
-    //capture the childsnapshot values
-    var lastHeroName = childSnapshot.val().hero;
-    var lastMatchDate = childSnapshot.val().date;
-
-    //create a new row i the table
+    // Create the new row
     var newRow = $("<tr>").append(
       $("<td>").text("On " + lastMatchDate + " you were matched with " + lastHeroName),
     );
