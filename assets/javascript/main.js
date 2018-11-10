@@ -82,7 +82,6 @@ $(document).ready(function () {
       messagingSenderId: "520183238866"
   };
 
-
   firebase.initializeApp(config);
 
   var database = firebase.database();
@@ -241,14 +240,6 @@ $(document).ready(function () {
   }
 
 
-  //after submitting, get the url of the image form the server
-
-  $('#div_to_display_image').html("<img src='path/image_file.jpg' alt='this' />");
-
-});
-
-
-
   var compareFace = function (imgUrl, charArray) {
       var superHero = "";
       var heroImage = "";
@@ -295,7 +286,6 @@ $(document).ready(function () {
   });
 
 
-
   ///////////////////////////////////////////////////////
   // comparing the uploaded image with array of heroes //
   ///////////////////////////////////////////////////////
@@ -313,7 +303,6 @@ $(document).ready(function () {
       var queryURL = "https://gateway.marvel.com:443/v1/public/characters?name=" + heroName + "&apikey=" + APIKey;
       var marvelResponse = ""
       var marvelCharacter = ""
-
 
       // We then created an AJAX call
       $.ajax({
@@ -333,7 +322,6 @@ $(document).ready(function () {
 
           console.log("Fifth: " + marvelCharacter);
 
-
           //display the description in the char-bio div
           $("#char-bio").text(marvelResponse);
           //display name in character div
@@ -348,11 +336,9 @@ $(document).ready(function () {
 
 
 
-
   /////////////////////////////////////////////////////
   // pushing past results from Firebase to the table //
   /////////////////////////////////////////////////////
-
 
   function logActivity(hero) {
 
@@ -365,7 +351,6 @@ $(document).ready(function () {
           date: matchDate
       };
 
-
       // Uploads employee data to the database
       database.ref().push(newMatch);
 
@@ -377,7 +362,6 @@ $(document).ready(function () {
       // Create Firebase event for adding the search to the databas
 
       database.ref().on("child_added", function (childSnapshot) {
-
 
           //capture the childsnapshot values	  database.ref().on("child_added", function (childSnapshot) {
           var lastHeroName = childSnapshot.val().hero;
@@ -424,4 +408,3 @@ $(document).ready(function () {
   //                                        Wasp
   //                                        Thor 
   // Valkyrie - no name
-
