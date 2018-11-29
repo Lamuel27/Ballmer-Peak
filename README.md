@@ -1,7 +1,4 @@
-# Ballmer-Peak
-
-Link to the deployed site:
-https://lamuel27.github.io/Ballmer-Peak/
+# MarvelAncestry.com
 
 Could you be related to a super hero? 
 
@@ -16,3 +13,25 @@ If you would like to risk it, get rid of your browser's security settings tempor
 
 Here is a video showing a demo of our application!
 [![Watch the video](https://i.ytimg.com/vi/RcNS0VhQgy0/maxresdefault.jpg)](https://youtu.be/RIgoybhuK30)
+
+## Getting Started
+
+Link to the deployed site:
+https://lamuel27.github.io/Ballmer-Peak/
+
+
+## Built With
+
+* JavaScript, jQuery
+* HTML5 and CSS3
+* Face++ API
+* Marvel API
+* Firebase
+* Bootstrap
+
+
+## Authors
+
+* **Sam Rehlinger** - *Concept Creator, Face++ API Leader, Initial Wireframe* - (https://github.com/Lamuel27)
+* **Kevin O'Brien** - *Firebase Implementation, Marvel API Implementation, User Stories/Kanban board* - (https://github.com/kobbootcamp)
+* **Samantha Matthiae** - *HTML/CSS Improvements, Marvel API Research, Shadow Box Library* - (https://github.com/smatthiae13)
